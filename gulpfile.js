@@ -2,9 +2,9 @@
 
 var gulp = require("gulp");
 
-var autoprefixer = require("autoprefixer");
 var jade = require("gulp-jade");
 var plumber = require("gulp-plumber");
+var prettify = require('gulp-html-prettify');
 var sass = require("gulp-sass");
 var server = require("browser-sync").create();
 
@@ -25,6 +25,10 @@ gulp.task("markup", function() {
   gulp.src("jade/**/*.jade")
     .pipe(plumber())
     .pipe(jade())
+    .pipe(prettify({
+      indent_char: ' ',
+      indent_size: 2
+    }))
     .pipe(gulp.dest("."))
     .pipe(server.stream());
 });

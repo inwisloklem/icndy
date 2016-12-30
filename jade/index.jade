@@ -7,71 +7,72 @@ html(lang = "en")
     link(rel = "stylesheet", href = "css/style.css")
 
   body
-    header.page-header
-      h1.visually-hidden ICNDY
-      
+    header.header
       nav.menu
         .menu__logo
 
         ul.menu__list
-          li.menu__item Mens
-          li.menu__item Womens
-          li.menu__item Brands
-          li.menu__item.menu__item--current Sale
-          li.menu__item News
+          each value in ["Mens", "Womens", "Brands", "Sale", "News"]
+            if value == "Sale"
+              li.menu__item.menu__item--current
+                a.menu__link(href = "#")= value
+            else
+              li.menu__item
+                a.menu__link(href = "#")= value
 
-      .page-header__scroll
+      .header__hgroup
+        h2.header__title STÜSSY2014
+        .header__subtitle Shop now
+
+      a.header__link(href = "#brands")
 
     main
-      section.brands
-        h2.visually-hidden Brands
-        
+      section.brands#brands
         .brands__large.brands__large--gourmet
-          h3.brands__title Shop Gourmet
+          a.brands__link(href = "#")
+            h3.brands__title Shop Gourmet
 
         .brands__small.brands__small--carhartt
-          h3.brands__title Shop Carhartt
+          a.brands__link(href = "#")
+            h3.brands__title Shop Carhartt
 
         .brands__small.brands__small--adidas
-          h3.brands__title Shop Adidas
+          a.brands__link(href = "#")
+            h3.brands__title Shop Adidas
 
         .brands__medium.brands__medium--10deep
-          h3.brands__title 10Deep Sale
+          a.brands__link(href = "#")
+            h3.brands__title 10Deep Sale
 
         .brands__medium.brands__medium--palace
-          h3.brands__title Palace A/W 2014
+          a.brands__link(href = "#")
+            h3.brands__title Palace A/W 2014
 
         .brands__medium.brands__medium--tech
-          h3.brands__title Tech Pack
+          a.brands__link(href = "#")
+            h3.brands__title Tech Pack
       
       section.instagram
         .instgram__hgroup
           h2.instagram__title #ICNDY on Instagram
           .instagram__subtitle View hashtag
 
-        .instagram__item
-        .instagram__item
-        .instagram__item
-        .instagram__item
-        .instagram__item
-        .instagram__item
-        .instagram__item
-        .instagram__item
+        - var i = 0
+        while i < 8
+          .instagram__item
+          - i++
 
-    footer.page-footer
+    footer.footer
       section.copyright
         p.copyright__text ©ICNDY2014
       
-      section.menu-bottom
-        ul.menu-bottom__list
-          li.menu-bottom__item Privacy
-          li.menu-bottom__item Terms
-          li.menu-bottom__item Shop
-          li.menu-bottom__item About
-          li.menu-bottom__item Contact      
+      section.links
+        ul.links__list
+          each value in ["Privacy", "Terms", "Shop", "About", "Contact"]
+            li.links__item= value
           
       section.social
         ul.social__list
-          li.social__item Instagram
-          li.social__item Facebook
-          li.social__item Twitter
+          each value in ["Instagram", "Facebook", "Twitter"]
+            li.social__item
+              a.social__link(href = "#")= value
