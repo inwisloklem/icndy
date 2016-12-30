@@ -1,0 +1,5 @@
+.DS_Store
+*.html
+css/*.css
+icndy.src/index.psd
+node_modules/
