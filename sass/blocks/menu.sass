@@ -1,6 +1,20 @@
 .menu
-  font-family: "Proxima Nova"
-  font-size: 18px
-  font-weight: 300
-  line-height: 40px
+  font-family: "Proxima Nova"  
   text-transform: uppercase
+
+  &__list
+    list-style: none
+    padding: 0
+
+  &__item
+    display: inline-block
+
+  &__link
+    font-size: 18px
+    font-weight: 600
+    line-height: 40px
+    text-decoration: none
+    color: $black
+
+    &--current, &:hover
+      color: $sunset-orange

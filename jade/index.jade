@@ -14,8 +14,8 @@ html(lang = "en")
         ul.menu__list
           each value in ["Mens", "Womens", "Brands", "Sale", "News"]
             if value == "Sale"
-              li.menu__item.menu__item--current
-                a.menu__link(href = "#")= value
+              li.menu__item
+                a.menu__link.menu__link--current(href = "#")= value
             else
               li.menu__item
                 a.menu__link(href = "#")= value
