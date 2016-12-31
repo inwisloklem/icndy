@@ -1,6 +1,5 @@
 .brands
-  font-family: "Proxima Nova"
-  text-transform: uppercase
+  @extend .fonts
 
   &__title
     font-weight: 300
@@ -8,6 +7,12 @@
   &__link
     text-decoration: none
     color: $black
+
+    &:hover
+      color: $sunset-orange
+
+  &__small, &__medium, &__large &__title
+    letter-spacing: 15px
 
   &__small, &__medium &__title
     font-size: 40px

@@ -21,7 +21,7 @@ html(lang = "en")
                 a.menu__link(href = "#")= value
 
       .header__hgroup
-        h2.header__title STÜSSY2014
+        h2.header__title STÜSSY2017
         .header__subtitle Shop now
 
       a.header__link(href = "#brands")
@@ -64,15 +64,16 @@ html(lang = "en")
 
     footer.footer
       section.copyright
-        p.copyright__text ©ICNDY2014
+        p.copyright__text ICNDY2017
       
       section.links
         ul.links__list
           each value in ["Privacy", "Terms", "Shop", "About", "Contact"]
-            li.links__item= value
+            li.links__item
+              a.links__link(href = "#")= value
           
       section.social
         ul.social__list
-          each value in ["Instagram", "Facebook", "Twitter"]
+          each value in ["[Instagram]", "[Facebook]", "[Twitter]"]
             li.social__item
               a.social__link(href = "#")= value
