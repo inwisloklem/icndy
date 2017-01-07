@@ -1,8 +1,9 @@
 .menu
-  @extend .fonts
 
   display: flex
   flex-direction: row
+
+  @extend .fonts
   justify-content: space-between
   align-items: center
   
@@ -14,19 +15,17 @@
     
     width: 224px
     height: 90px
-    
+
     background-color: $white    
     color: rgba($cod-gray, 0.5)
   
     text-align: center
-  
-    font-size: 40px
     font-weight: 700
-
+    font-size: 40px
     letter-spacing: 15px
 
     user-select: none
-    
+
     &:hover
       background-color: $sunset-orange
       color: $white
@@ -43,20 +42,19 @@
 
   &__item
     display: inline-block
-    text-align: right
-    
+
     margin-left: 75px
+    text-align: right
 
   &__link
-    font-size: 18px
-    font-weight: 600
-    line-height: 40px
-    letter-spacing: 5px
-    text-decoration: none
-
     color: $white
+    text-decoration: none
+    letter-spacing: 5px
+    font-weight: 600
+    font-size: 18px
+    line-height: 40px
 
     &--current, &:hover
       color: $sunset-orange
-      
+
       transition: color 0.5s ease-out
