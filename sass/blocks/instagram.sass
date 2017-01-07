@@ -1,11 +1,30 @@
 .instagram
   @extend .fonts
 
+  position: relative
+
+  display: flex
+
+  flex-direction: row
+  flex-wrap: wrap
+
+  &__hgroup
+    position: absolute
+    top: 50%
+    width: 100%
+    text-align: center
+
+    transform: translateY(-50%)
+    opacity: 1
+    z-index: 1
+
   &__title
     font-weight: 300
     font-size: 60px
     line-height: 70px
     letter-spacing: 25px
+
+    color: $white
 
   &__subtitle
     color: $sunset-orange
@@ -13,3 +32,17 @@
     font-size: 30px
     line-height: 75px
     letter-spacing: 15px
+    
+    position: relative
+    bottom: 40px
+
+  &__item
+    width: 425px
+    height: 425px
+
+    background-color: $cod-gray
+
+  @for $i from 2 through 9
+    &__item:nth-of-type(#{$i})
+      $j: $i - 1
+      background: linear-gradient(rgba($cod-gray, 0.7), rgba($cod-gray, 0.7)), url("../img/instagram-item-#{$j}.jpg")

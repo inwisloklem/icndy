@@ -29,31 +29,37 @@ html(lang = "en")
     main
       section.brands#brands
         .brands__large.brands__large--gourmet
-          a.brands__link(href = "#")
-            h3.brands__title Shop Gourmet
+          h3.brands__title: a.brands__link(href = "#")
+            | Shop Gourmet
 
-        .brands__small.brands__small--carhartt
-          a.brands__link(href = "#")
-            h3.brands__title Shop Carhartt
+        .brands__column
+          .brands__small.brands__small--carhartt
+            h3.brands__title: a.brands__link(href = "#")
+              | Shop
+              | Carhartt
 
-        .brands__small.brands__small--adidas
-          a.brands__link(href = "#")
-            h3.brands__title Shop Adidas
+          .brands__small.brands__small--adidas
+            h3.brands__title: a.brands__link(href = "#")
+              | Shop
+              | Adidas
 
-        .brands__medium.brands__medium--10deep
-          a.brands__link(href = "#")
-            h3.brands__title 10Deep Sale
+        .brands__row
+          .brands__medium.brands__medium--deep
+            h3.brands__title: a.brands__link(href = "#")
+              | 10Deep
+              | Sale
 
-        .brands__medium.brands__medium--palace
-          a.brands__link(href = "#")
-            h3.brands__title Palace A/W 2014
+          .brands__medium.brands__medium--palace
+            h3.brands__title: a.brands__link(href = "#") 
+              | Palace
+              | A/W 2014
 
-        .brands__medium.brands__medium--tech
-          a.brands__link(href = "#")
-            h3.brands__title Tech Pack
+          .brands__medium.brands__medium--tech
+            h3.brands__title: a.brands__link(href = "#")
+              | Tech Pack
       
       section.instagram
-        .instgram__hgroup
+        .instagram__hgroup
           h2.instagram__title #ICNDY on Instagram
           .instagram__subtitle View hashtag
 

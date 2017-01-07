@@ -1,15 +1,56 @@
 .brands
   @extend .fonts
+    
+  padding: 83px 99px
+    
+  display: flex
+
+  flex-direction: row
+  flex-wrap: wrap
+  
+  justify-content: space-between
 
   &__title
+    position: absolute
+    bottom: 0
+    
     font-weight: 300
 
   &__link
-    color: $black
+    color: $white
     text-decoration: none
-
+  
     &:hover
       color: $sunset-orange
+      
+      transition: color 0.5s ease-out
+      
+  &__column
+    display: flex
+    flex-direction: column
+    
+    justify-content: space-between
+    
+    min-height: 776px
+
+  &__row
+    display: flex
+    flex-direction: row
+    
+    justify-content: space-between
+    
+    width: 100%
+    
+    padding-top: 58px
+      
+  &__small, &__medium, &__large
+    position: relative
+    box-sizing: border-box
+    
+    padding: 0 40px
+  
+    background-color: $cod-gray
+    white-space: pre
 
   &__small, &__medium, &__large &__title
     letter-spacing: 15px
@@ -21,3 +62,34 @@
   &__large &__title
     font-size: 60px
     line-height: 70px
+    
+  &__small
+    width: 462px
+    height: 360px
+    
+    &--carhartt
+      background-image: url("../img/image-carhartt.jpg")
+
+    &--adidas
+      background-image: url("../img/image-adidas.jpg")
+    
+  &__medium
+    width: 462px
+    height: 580px
+    
+    &--deep
+      background-image: url("../img/image-deep.jpg")
+
+    &--palace
+      background-image: url("../img/image-palace.jpg")
+      
+    &--tech
+      background-image: url("../img/image-tech.jpg")
+    
+  &__large
+    width: 982px
+    height: 776px
+    
+    &--gourmet
+      background-image: url("../img/image-gourmet.jpg")
+    
