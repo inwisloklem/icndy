@@ -2,11 +2,15 @@
 
 var gulp = require("gulp");
 
+var inject = require("gulp-inject");
 var jade = require("gulp-jade");
 var plumber = require("gulp-plumber");
 var prettify = require('gulp-html-prettify');
+var rename = require("gulp-rename");
 var sass = require("gulp-sass");
 var server = require("browser-sync").create();
+var svgmin = require("gulp-svgmin");
+var svgstore = require("gulp-svgstore");
 
 gulp.task("serve", ["markup", "style"], function() {
   server.init({
@@ -39,4 +43,18 @@ gulp.task("style", function() {
     .pipe(sass())
     .pipe(gulp.dest("css"))
     .pipe(server.stream());
+});
+
+gulp.task("svgstore", function() {
+  var svgs = gulp.src("img/icons/*.svg")
+    .pipe(svgmin())
+    .pipe(svgstore({inlineSvg: true}))
+
+  function fileContents(filePath, file) {
+    return file.contents.toString();
+  }
+
+  return gulp.src("jade/index.jade")
+    .pipe(inject(svgs, {transform: fileContents}))
+    .pipe(gulp.dest("jade"));
 });
